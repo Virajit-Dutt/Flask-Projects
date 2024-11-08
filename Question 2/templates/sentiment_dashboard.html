@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Sentiment Information</h2>
+    <p>Choose a ticker to view the Sentiment data</p>
+    <form action="/sentiment_dashboard/ticker" method="POST">
+        <select name="ticker">
+            {% for ticker in tickers %}
+                <option value="{{ ticker }}">{{ ticker }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <a href="/logout">Logout</a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Analyst Information</h2>
+    <p>Choose a state to view the temperature data</p>
+    <form action="/analyst_dashboard/state" method="POST">
+        <select name="state">
+            {% for state in states %}
+                <option value="{{ state }}">{{ state }}</option>
+            {% endfor %}
+        </select>
+        <select name="graph">
+            <option value="Temperature.Max Temp">Max Temperature</option>
+            <option value="Temperature.Min Temp">Min Temperature</option>
+            <option value="Temperature.Avg Temp">Average Temperature</option>
+            <option value="Precipitation">Precipitate</option>
+            <option value="Wind.Direction">Wind Direction</option>
+            <option value="Wind.Speed">Wind Speed</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <a href="/logout">Logout</a>
+</body>
+</html>

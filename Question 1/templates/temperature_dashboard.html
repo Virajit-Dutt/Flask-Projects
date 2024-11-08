@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Temperature Information</h2>
+    <p>Choose a state to view the temperature data</p>
+    <form action="/temperature_dashboard/state" method="POST">
+        <select name="state">
+            {% for state in states %}
+                <option value="{{ state }}">{{ state }}</option>
+            {% endfor %}
+        </select>
+        <select name="temp">
+            <option value="Max Temp">Max Temperature</option>
+            <option value="Min Temp">Min Temperature</option>
+            <option value="Avg Temp">Average Temperature</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <a href="/logout">Logout</a>
+</body>
+</html>

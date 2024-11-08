@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Wind Information</h2>
+    <p>Choose a state to view the Wind data</p>
+    <form action="/wind_dashboard/state" method="POST">
+        <select name="state">
+            {% for state in states %}
+                <option value="{{ state }}">{{ state }}</option>
+            {% endfor %}
+        </select>
+        <select name="wind">
+            <option value="Direction">Wind Direction</option>
+            <option value="Speed">Wind Speed</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <a href="/logout">Logout</a>
+</body>
+</html>
